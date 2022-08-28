@@ -8,8 +8,8 @@ module.exports = ({ env }) => [
           useDefaults: true,
           directives: {
             'connect-src': ["'self'", 'https:'],
-            'img-src': ["'self'", 'data:', 'blob:', `https://${env('AWS_BUCKET')}.s3.amazonaws.com`],
-            'media-src': ["'self'", 'data:', 'blob:', `https://${env('AWS_BUCKET')}.s3.amazonaws.com`],
+            'img-src': ["'self'", 'data:', 'blob:', `https://${env('AWS_BUCKET')}.s3.${env('AWS_REGION')}.amazonaws.com`],
+            'media-src': ["'self'", 'data:', 'blob:', `https://${env('AWS_BUCKET')}.s3.${env('AWS_REGION')}.amazonaws.com`],
             upgradeInsecureRequests: null,
           },
         },
